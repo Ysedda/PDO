@@ -29,7 +29,6 @@ if (empty($errors)) {
         $statement->bindValue(':firstname', $contact['firstname'], \PDO::PARAM_STR);
         $statement->bindValue(':lastname', $contact['lastname'], \PDO::PARAM_STR);
         $statement->execute();
-        $friends = $statement->fetchAll();
         header('Location: /index.php');
     }
 }
