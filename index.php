@@ -1,10 +1,10 @@
 <?php
 
 require_once '_connec.php';
+
 $pdo = new \PDO(DSN, USER, PASS);
-$query = "SELECT * FROM friend";
-$statement = $pdo->query($query);
-$friends = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+$errors =[];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -33,6 +33,9 @@ if (empty($errors)) {
         header('Location: /index.php');
     }
 }
+$query = "SELECT * FROM friend";
+$statement = $pdo->query($query);
+$friends = $statement->fetchAll();
 ?>
 
 <!DOCTYPE html>
