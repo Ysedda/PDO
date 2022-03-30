@@ -35,7 +35,7 @@ if (empty($errors)) {
 }
 $query = "SELECT * FROM friend";
 $statement = $pdo->query($query);
-$friends = $statement->fetchAll();
+$friends = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
